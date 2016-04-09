@@ -13,10 +13,10 @@ if(isset($_POST['submit'])){
 	
 		//send notification
 		$sql = mysql_query("SELECT * FROM users WHERE subscribed='1'");
+		// this line loads the library 
+			require('../Services/Twilio.php');
 		while ($row = mysql_fetch_object($sql))
 		{
-			// this line loads the library 
-			require('../Services/Twilio.php'); 
  
 			$account_sid = 'AC271b8182001cd93d00267b56f0e514b2'; 
 			$auth_token = 'd945639188b144ed491463e880460cba'; 
@@ -24,8 +24,8 @@ if(isset($_POST['submit'])){
  
 			$client->account->messages->create(array( 
 			'To' => $row->phone_number, 
-			'From' => "+13204210506", 
-			'Body' => "hi, this is my first test message with twilio!!!",   
+			'From' => "+13204210506",
+			'Body' => "hi $row->first_name, don't miss the new content posted on csci.club, $title",   
 			));
 			//echo "<li><a href=\"".Dir."?p=$row->postID\">$row->postTitle</a></li>"; 
 		}
