@@ -6,7 +6,7 @@ session_start();
 // db properties
 define('DBHOST','localhost');
 define('DBUSER','root');
-define('DBPASS','password');
+define('DBPASS','csciclub');
 define('DBNAME','db/development.sqlite3');
 
 // make a connection to mysql here
@@ -17,10 +17,10 @@ if(!$conn){
 }
 
 // define site path
-define('Dir','http://localhost/my-site/');
+define('Dir','http://csci.club/');
 
 // define admin site path
-define('AdminDir','http://localhost/my-site/admin/');
+define('AdminDir','http://csci.club/admin/');
 
 // define site title for top of the browser
 define('SiteTitle','CSCI Club Home');
