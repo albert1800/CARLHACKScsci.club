@@ -75,9 +75,9 @@ while($row = mysql_fetch_object($sql))
 	echo "<tr>";
 		echo "<td>$row->postTitle</td>";
 		if($row->postID == 1){ //home page hide the delete link
-			echo "<td><a href=\"".AdminDir."editpage.php?id=$row->postID\">Edit</a></td>";
+			echo "<td><a href=\"".AdminDir."edit.php?id=$row->postID\">Edit</a></td>";
 		} else {
-			echo "<td><a href=\"".AdminDir."editpage.php?id=$row->postID\">Edit</a> | <a href=\"javascript:delpage('$row->postID','$row->postTitle');\">Delete</a></td>";
+			echo "<td><a href=\"".AdminDir."edit.php?id=$row->postID\">Edit</a> | <a href=\"javascript:delpage('$row->postID','$row->postTitle');\">Delete</a></td>";
 		}
 		
 	echo "</tr>";
