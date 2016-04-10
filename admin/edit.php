@@ -29,19 +29,19 @@ if(isset($_POST['submit'])){
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><?php echo SiteTitle;?></title>
-<link href="<?php echo DIR;?>style/style.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo Dir;?>style/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="wrapper">
 
-<div id="logo"><a href="<?php echo DIR;?>"><img src="images/logo.png" alt="<?php echo SiteTitle;?>" title="<?php echo SiteTitle;?>" border="0" /></a></div><!-- close logo -->
+<div id="logo"><a href="<?php echo Dir;?>"><img src="../images/computer.jpg" alt="<?php echo SiteTitle;?>" title="<?php echo SiteTitle;?>" border="0" height="64" width="64"/></a></div><!-- close logo -->
 
 <!-- NAV -->
 <div id="navigation">
 <ul class="menu">
 <li><a href="<?php echo AdminDir;?>">Admin</a></li>
 <li><a href="<?php echo AdminDir;?>?logout">Logout</a></li>
-<li><a href="<?php echo DIR;?>" target="_blank">View Website</a></li>
+<li><a href="<?php echo Dir;?>" target="_blank">View Website</a></li>
 </ul>
 </div>
 <!-- END NAV -->
@@ -62,7 +62,7 @@ $row = mysql_fetch_object($q);
 <input type="hidden" name="postID" value="<?php echo $row->postID;?>" />
 <p>Title:<br /> <input name="postTitle" type="text" value="<?php echo $row->postTitle;?>" size="100" />
 </p>
-<p>content<br /><textarea name="postCont" cols="150" rows="30"><?php echo $row->postCont;?></textarea>
+<p>content<br /><textarea name="postCont" cols="100" rows="30"><?php echo $row->postCont;?></textarea>
 </p>
 <p><input type="submit" name="submit" value="Submit" class="button" /></p>
 </form>
