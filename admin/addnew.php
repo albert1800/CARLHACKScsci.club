@@ -13,11 +13,10 @@ if(isset($_POST['submit'])){
 	
 		//send notification
 		$sql = mysql_query("SELECT * FROM users WHERE subscribed='1'");
-		// this line loads the library 
+//		 this line loads the library 
 			require('../Services/Twilio.php');
 		while ($row = mysql_fetch_object($sql))
 		{
- 
 			$account_sid = 'AC271b8182001cd93d00267b56f0e514b2'; 
 			$auth_token = 'd945639188b144ed491463e880460cba'; 
 			$client = new Services_Twilio($account_sid, $auth_token); 
@@ -27,8 +26,7 @@ if(isset($_POST['submit'])){
 			'From' => "+13204210506",
 			'Body' => "hi $row->first_name, don't miss the new content posted on csci.club, $title",   
 			));
-			//echo "<li><a href=\"".Dir."?p=$row->postID\">$row->postTitle</a></li>"; 
-		}
+	}
 	$_SESSION['success'] = 'Post Added';
 	header('Location: '.AdminDir);
 	exit();
@@ -47,7 +45,7 @@ if(isset($_POST['submit'])){
 <body>
 <div id="wrapper">
 
-<div id="logo"><a href="<?php echo Dir;?>"><img src="images/logo.png" alt="<?php echo SiteTitle;?>" title="<?php echo SiteTitle;?>" border="0" /></a></div><!-- close logo -->
+<div id="logo"><a href="<?php echo Dir;?>"><img src="../images/computer.jpg" alt="<?php echo SiteTitle;?>" title="<?php echo SiteTitle;?>" border="0" height="64px" width="64px"/></a></div><!-- close logo -->
 
 <!-- NAV -->
 <div id="navigation">
@@ -65,7 +63,7 @@ if(isset($_POST['submit'])){
 
 <form action="" method="post">
 <p>Title:<br /> <input name="postTitle" type="text" value="" size="100" /></p>
-<p>content<br /><textarea name="postCont" cols="150" rows="30"></textarea></p>
+<p>content<br /><textarea name="postCont" cols="100" rows="30"></textarea></p>
 <p><input type="submit" name="submit" value="Submit" class="button" /></p>
 </form>
 
